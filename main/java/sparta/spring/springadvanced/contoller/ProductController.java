@@ -1,4 +1,4 @@
-package sparta.spring.springadvanced;
+package sparta.spring.springadvanced.contoller;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -6,6 +6,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import sparta.spring.springadvanced.model.Product;
+import sparta.spring.springadvanced.dto.ProductMypriceRequestDto;
+import sparta.spring.springadvanced.dto.ProductRequestDto;
+import sparta.spring.springadvanced.service.ProductService;
 
 @RestController // JSON으로 데이터를 주고받음을 선언합니다.
 public class ProductController {

@@ -1,4 +1,4 @@
-package sparta.spring.springadvanced;
+package sparta.spring.springadvanced.contoller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
+import sparta.spring.springadvanced.dto.ItemDto;
 
 import java.io.IOException;
 import java.util.List;

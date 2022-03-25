@@ -9,6 +9,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import sparta.spring.springadvanced.dto.ItemDto;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

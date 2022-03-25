@@ -1,4 +1,4 @@
-package sparta.spring.springadvanced;
+package sparta.spring.springadvanced.dto;
 
 import lombok.Getter;
 

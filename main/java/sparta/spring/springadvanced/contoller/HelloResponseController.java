@@ -1,8 +1,9 @@
-package sparta.spring.springadvanced;
+package sparta.spring.springadvanced.contoller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import sparta.spring.springadvanced.model.Star;
 
 @Controller
 @RequestMapping("/hello/response")

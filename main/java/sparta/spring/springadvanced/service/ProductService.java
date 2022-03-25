@@ -1,4 +1,4 @@
-package sparta.spring.springadvanced;
+package sparta.spring.springadvanced.service;
 
 import org.springframework.stereotype.Service;
 
@@ -6,6 +6,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import sparta.spring.springadvanced.model.Product;
+import sparta.spring.springadvanced.dto.ProductMypriceRequestDto;
+import sparta.spring.springadvanced.repository.ProductRepository;
+import sparta.spring.springadvanced.dto.ProductRequestDto;
 
 @Service
 public class ProductService {

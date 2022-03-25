@@ -1,4 +1,4 @@
-package sparta.spring.springadvanced;
+package sparta.spring.springadvanced.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

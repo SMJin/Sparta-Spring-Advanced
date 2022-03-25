@@ -1,8 +1,9 @@
-package sparta.spring.springadvanced;
+package sparta.spring.springadvanced.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import sparta.spring.springadvanced.dto.ProductRequestDto;
 
 import javax.persistence.*;
 
