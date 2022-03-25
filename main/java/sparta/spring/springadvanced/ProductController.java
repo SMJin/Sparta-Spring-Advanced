@@ -12,10 +12,9 @@ public class ProductController {
 
     private final ProductService productService;
 
-    public ProductController() {
-        ProductService productService = new ProductService();
-        this.productService = productService;
-    }
+//    public ProductController(ProductService productService) {
+//        this.productService = productService;
+//    }
 
     // 신규 상품 등록
     @PostMapping("/api/products")
