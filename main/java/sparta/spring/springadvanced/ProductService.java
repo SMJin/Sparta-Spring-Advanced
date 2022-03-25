@@ -1,8 +1,12 @@
 package sparta.spring.springadvanced;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import java.sql.SQLException;
 import java.util.List;
 
+@Service
 public class ProductService {
 
     private final ProductRepository productRepository;
