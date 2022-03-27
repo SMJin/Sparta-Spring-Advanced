@@ -50,7 +50,7 @@ public class HelloRequestController {
     @PostMapping("/form/model")
     @ResponseBody
     public String helloRequestBodyForm(@ModelAttribute Star star) {
-        return String.format("Hello, @RequestBody.<br> (name = %s, age = %d) ", star.name, star.age);
+        return String.format("Hello, @RequestBody.<br> (name = %s, age = %d) ", star.getName(), star.getAge());
     }
 
     // [Request sample]
@@ -62,6 +62,6 @@ public class HelloRequestController {
     @PostMapping("/form/json")
     @ResponseBody
     public String helloPostRequestJson(@RequestBody Star star) {
-        return String.format("Hello, @RequestBody.<br> (name = %s, age = %d) ", star.name, star.age);
+        return String.format("Hello, @RequestBody.<br> (name = %s, age = %d) ", star.getName(), star.getAge());
     }
 }
