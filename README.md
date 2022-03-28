@@ -38,3 +38,6 @@
 
 ## week02-06 signUp UI
 ##### 회원가입 UI를 반영해보자
+
+## week02-07 signUp Function
+##### 회원가입 기능을 구현해보자
