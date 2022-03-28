@@ -36,3 +36,5 @@
 ## week2-05 default spring security framework
 ##### 스프링 시큐리티 프레임워크를 사용하여 디폴트 유저를 다뤄보자
 
+## week02-06 signUp UI
+##### 회원가입 UI를 반영해보자
