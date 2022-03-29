@@ -53,3 +53,6 @@
 
 ## week02-11 admin article
 ##### 관리자의 게시판을 만들어보자
+
+## week02-12 forbidden page
+##### 사용자는 관리자 페이지에 들어갈 수 없게 해보자

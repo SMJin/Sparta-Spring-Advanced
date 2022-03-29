@@ -3,9 +3,11 @@ package sparta.spring.springadvanced.contoller;
 import sparta.spring.springadvanced.dto.ProductMypriceRequestDto;
 import sparta.spring.springadvanced.dto.ProductRequestDto;
 import sparta.spring.springadvanced.model.Product;
+import sparta.spring.springadvanced.model.UserRoleEnum;
 import sparta.spring.springadvanced.security.UserDetailsImpl;
 import sparta.spring.springadvanced.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
@@ -53,6 +55,8 @@ public class ProductController {
     }
 
     // (관리자용) 등록된 모든 상품 목록 조회
+    // @Secured("ROLE_ADMIN")
+    @Secured(value = UserRoleEnum.Authority.ADMIN)
     @GetMapping("/api/admin/products")
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
