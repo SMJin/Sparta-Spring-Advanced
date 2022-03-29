@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.SQLException;
 import java.util.List;
 
 @RestController // JSON으로 데이터를 주고받음을 선언합니다.
@@ -25,7 +24,7 @@ public class ProductController {
     // 신규 상품 등록
     @PostMapping("/api/products")
     public Product createProduct(@RequestBody ProductRequestDto requestDto,
-                                 @AuthenticationPrincipal UserDetailsImpl userDetails) throws SQLException {
+                                 @AuthenticationPrincipal UserDetailsImpl userDetails) {
 // 로그인 되어 있는 회원 테이블의 ID
         Long userId = userDetails.getUser().getId();
 
@@ -37,7 +36,7 @@ public class ProductController {
 
     // 설정 가격 변경
     @PutMapping("/api/products/{id}")
-    public Long updateProduct(@PathVariable Long id, @RequestBody ProductMypriceRequestDto requestDto) throws SQLException {
+    public Long updateProduct(@PathVariable Long id, @RequestBody ProductMypriceRequestDto requestDto) {
         Product product = productService.updateProduct(id, requestDto);
 
 // 응답 보내기 (업데이트된 상품 id)
@@ -46,10 +45,16 @@ public class ProductController {
 
     // 로그인한 회원이 등록한 관심 상품 조회
     @GetMapping("/api/products")
-    public List<Product> getProducts(@AuthenticationPrincipal UserDetailsImpl userDetails) throws SQLException {
+    public List<Product> getProducts(@AuthenticationPrincipal UserDetailsImpl userDetails) {
 // 로그인 되어 있는 회원 테이블의 ID
         Long userId = userDetails.getUser().getId();
 
         return productService.getProducts(userId);
+    }
+
+    // (관리자용) 등록된 모든 상품 목록 조회
+    @GetMapping("/api/admin/products")
+    public List<Product> getAllProducts() {
+        return productService.getAllProducts();
     }
 }

@@ -50,3 +50,6 @@
 
 ## week02-10 upload article per person
 ##### 사용자마다 다르게 게시판이 보이게 해보자
+
+## week02-11 admin article
+##### 관리자의 게시판을 만들어보자
