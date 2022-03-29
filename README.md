@@ -47,3 +47,6 @@
 
 ## week02-09 login, logout
 ##### 로그인과 로그아웃 기능을 구현해보자
+
+## week02-10 upload article per person
+##### 사용자마다 다르게 게시판이 보이게 해보자

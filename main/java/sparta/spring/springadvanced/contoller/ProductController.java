@@ -1,15 +1,16 @@
 package sparta.spring.springadvanced.contoller;
 
+import sparta.spring.springadvanced.dto.ProductMypriceRequestDto;
+import sparta.spring.springadvanced.dto.ProductRequestDto;
+import sparta.spring.springadvanced.model.Product;
+import sparta.spring.springadvanced.security.UserDetailsImpl;
+import sparta.spring.springadvanced.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import sparta.spring.springadvanced.model.Product;
-import sparta.spring.springadvanced.dto.ProductMypriceRequestDto;
-import sparta.spring.springadvanced.dto.ProductRequestDto;
-import sparta.spring.springadvanced.service.ProductService;
 
 @RestController // JSON으로 데이터를 주고받음을 선언합니다.
 public class ProductController {
@@ -23,8 +24,12 @@ public class ProductController {
 
     // 신규 상품 등록
     @PostMapping("/api/products")
-    public Product createProduct(@RequestBody ProductRequestDto requestDto) throws SQLException {
-        Product product = productService.createProduct(requestDto);
+    public Product createProduct(@RequestBody ProductRequestDto requestDto,
+                                 @AuthenticationPrincipal UserDetailsImpl userDetails) throws SQLException {
+// 로그인 되어 있는 회원 테이블의 ID
+        Long userId = userDetails.getUser().getId();
+
+        Product product = productService.createProduct(requestDto, userId);
 
 // 응답 보내기
         return product;
@@ -39,12 +44,12 @@ public class ProductController {
         return product.getId();
     }
 
-    // 등록된 전체 상품 목록 조회
+    // 로그인한 회원이 등록한 관심 상품 조회
     @GetMapping("/api/products")
-    public List<Product> getProducts() throws SQLException {
-        List<Product> products = productService.getProducts();
+    public List<Product> getProducts(@AuthenticationPrincipal UserDetailsImpl userDetails) throws SQLException {
+// 로그인 되어 있는 회원 테이블의 ID
+        Long userId = userDetails.getUser().getId();
 
-// 응답 보내기
-        return products;
+        return productService.getProducts(userId);
     }
 }

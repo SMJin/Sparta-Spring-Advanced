@@ -27,9 +27,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-// 회원 관리 처리 API (POST /user/**) 에 대해 CSRF 무시
-        http.csrf()
-                .ignoringAntMatchers("/user/**");
+// CSRF protection 을 비활성화
+        http.csrf().disable();
 
         http.authorizeRequests()
 // image 폴더를 login 없이 허용
@@ -55,10 +54,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
 // [로그아웃 기능]
                 .logout()
-// 로그아웃 처리 URL
+// 로그아웃 요청 처리 URL
                 .logoutUrl("/user/logout")
                 .permitAll();
     }
 }
-
-
