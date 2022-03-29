@@ -41,3 +41,6 @@
 
 ## week02-07 signUp Function
 ##### 회원가입 기능을 구현해보자
+
+## week02-08 password Encoding
+##### 패스워드를 암호화 해보자
