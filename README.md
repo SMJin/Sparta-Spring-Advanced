@@ -44,3 +44,6 @@
 
 ## week02-08 password Encoding
 ##### 패스워드를 암호화 해보자
+
+## week02-09 login, logout
+##### 로그인과 로그아웃 기능을 구현해보자
