@@ -59,3 +59,6 @@
 
 ## week02-15 kakao social login user information
 ##### 카카오 소셜 로그인시 필요한 유저정보 가져오기
+
+## week02-17 kakao social login
+##### 카카오 유저정보로 회원가입 구현
