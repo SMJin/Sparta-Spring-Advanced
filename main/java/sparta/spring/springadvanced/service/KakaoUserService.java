@@ -124,6 +124,11 @@ public class KakaoUserService {
 
 // email: kakao email
             String email = kakaoUserInfo.getEmail();
+            User user = userRepository.findByEmail(kakaoUserInfo.getEmail()).orElse(null);
+            if (user != null) {
+                user.setKakaoId(kakaoId);
+                return user;
+            }
 // role: 일반 사용자
             UserRoleEnum role = UserRoleEnum.USER;
 
