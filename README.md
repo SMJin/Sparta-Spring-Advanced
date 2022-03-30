@@ -56,3 +56,6 @@
 
 ## week02-12 forbidden page
 ##### 사용자는 관리자 페이지에 들어갈 수 없게 해보자
+
+## week02-15 kakao social login user information
+##### 카카오 소셜 로그인시 필요한 유저정보 가져오기
