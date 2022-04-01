@@ -65,3 +65,6 @@
 
 ## week02-hw email duplication
 ##### 2주차 과제인 만약 카카오 로그인 유저와 본래 유저의 이메일이 겹친다면 합친다
+
+## week03-03 JUnit Test
+##### JUnit 의 단위 테스트를 사용해보자
