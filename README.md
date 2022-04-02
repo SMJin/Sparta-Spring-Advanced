@@ -1,4 +1,5 @@
-# Sparta-Spring-Advanced
+### Sparta-Spring-Advanced 
+# Commit description (커밋 설명서)
 
 ## week1-06 Servlet
 ##### 스프링에서 Controller가 필요한 이유를 깨닫기 위해서 서블릿을 사용해보자.
