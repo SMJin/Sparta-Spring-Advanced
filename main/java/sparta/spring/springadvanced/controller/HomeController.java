@@ -1,4 +1,4 @@
-package sparta.spring.springadvanced.contoller;
+package sparta.spring.springadvanced.controller;
 
 import sparta.spring.springadvanced.model.UserRoleEnum;
 import sparta.spring.springadvanced.security.UserDetailsImpl;

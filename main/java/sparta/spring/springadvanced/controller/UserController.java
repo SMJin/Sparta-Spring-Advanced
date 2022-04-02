@@ -1,4 +1,4 @@
-package sparta.spring.springadvanced.contoller;
+package sparta.spring.springadvanced.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import sparta.spring.springadvanced.dto.SignupRequestDto;

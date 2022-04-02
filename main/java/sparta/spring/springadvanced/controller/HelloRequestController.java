@@ -1,4 +1,4 @@
-package sparta.spring.springadvanced.contoller;
+package sparta.spring.springadvanced.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
