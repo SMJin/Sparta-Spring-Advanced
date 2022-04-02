@@ -87,3 +87,6 @@
 
 ## week03-11 Spring MVC controller test
 ###### 스프링 MVC 를 이용한 컨트롤러 테스트
+
+## week03-hw UserProductIntegrationTest.java
+###### 회원이 등록한 상품을 검증하는 통합 테스트 숙제하기
