@@ -1,7 +1,7 @@
 ### Sparta-Spring-Advanced 
 # Commit description (커밋 설명서)
 
-## Week 01
+## < Week 01 >
 ## week1-06 Servlet
 ###### 스프링에서 Controller가 필요한 이유를 깨닫기 위해서 서블릿을 사용해보자.
 
@@ -35,7 +35,7 @@
 ## week1-18 organize folder
 ###### 폴더 정리해서 보기좋게 만들기
 
-## Week 02
+## < Week 02 >
 ## week2-05 default spring security framework
 ###### 스프링 시큐리티 프레임워크를 사용하여 디폴트 유저를 다뤄보자
 
@@ -69,7 +69,7 @@
 ## week02-hw email duplication
 ###### 2주차 과제인 만약 카카오 로그인 유저와 본래 유저의 이메일이 겹친다면 합친다
 
-## Week 03
+## < Week 03 >
 ## week03-03 JUnit Test
 ###### JUnit 의 단위 테스트를 사용해보자
 
