@@ -81,3 +81,6 @@
 
 ## week03-07 Mockito unit test
 ###### Mockito 프레임워크를 이용한 가짜 객체 단위 테스트
+
+## week03-10 Sprint Boot Integration Test
+###### 스프링 부트를 이용한 통합 테스트
