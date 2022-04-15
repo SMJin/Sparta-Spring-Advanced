@@ -1,16 +1,15 @@
 package sparta.spring.springadvanced.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.*;
 import sparta.spring.springadvanced.dto.FolderRequestDto;
 import sparta.spring.springadvanced.model.Folder;
+import sparta.spring.springadvanced.model.Product;
 import sparta.spring.springadvanced.model.User;
 import sparta.spring.springadvanced.security.UserDetailsImpl;
 import sparta.spring.springadvanced.service.FolderService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -40,5 +39,26 @@ public class FolderController {
             @AuthenticationPrincipal UserDetailsImpl userDetails
     ) {
         return folderService.getFolders(userDetails.getUser());
+    }
+
+    // 회원이 등록한 폴더 내 모든 상품 조회
+    @GetMapping("api/folders/{folderId}/products")
+    public Page<Product> getProductsInFolder(
+            @PathVariable Long folderId,
+            @RequestParam int page,
+            @RequestParam int size,
+            @RequestParam String sortBy,
+            @RequestParam boolean isAsc,
+            @AuthenticationPrincipal UserDetailsImpl userDetails
+    ) {
+        page = page - 1;
+        return folderService.getProductsInFolder(
+                folderId,
+                page,
+                size,
+                sortBy,
+                isAsc,
+                userDetails.getUser()
+        );
     }
 }
