@@ -110,3 +110,6 @@
 ## < Week 05 >
 ## week05-03 find Top5 User
 ###### Top5 회원 찾기 구현
+
+## week05-06 spring AOP
+###### Spring AOP 이해 (예제)
