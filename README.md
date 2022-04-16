@@ -113,3 +113,6 @@
 
 ## week05-06 spring AOP
 ###### Spring AOP 이해 (예제)
+
+## week05-07 why Transaction
+###### 트랜젝션이 필요한 이유, 트렌젝션 없이 구현해보기

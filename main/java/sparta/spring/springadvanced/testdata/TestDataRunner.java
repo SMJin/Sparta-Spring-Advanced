@@ -6,9 +6,11 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import sparta.spring.springadvanced.dto.ItemDto;
+import sparta.spring.springadvanced.model.Folder;
 import sparta.spring.springadvanced.model.Product;
 import sparta.spring.springadvanced.model.User;
 import sparta.spring.springadvanced.model.UserRoleEnum;
+import sparta.spring.springadvanced.repository.FolderRepository;
 import sparta.spring.springadvanced.repository.ProductRepository;
 import sparta.spring.springadvanced.repository.UserRepository;
 import sparta.spring.springadvanced.service.ItemSearchService;
@@ -28,6 +30,9 @@ public class TestDataRunner implements ApplicationRunner {
 
     @Autowired
     ProductRepository productRepository;
+
+    @Autowired
+    FolderRepository folderRepository;
 
     @Autowired
     UserRepository userRepository;
@@ -88,6 +93,9 @@ public class TestDataRunner implements ApplicationRunner {
         }
 
         productRepository.saveAll(productList);
+
+        Folder folder = new Folder(searchWord, user);
+        folderRepository.save(folder);
     }
 
     public int getRandomNumber(int min, int max) {
