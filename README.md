@@ -116,3 +116,6 @@
 
 ## week05-07 why Transaction
 ###### 트랜젝션이 필요한 이유, 트렌젝션 없이 구현해보기
+
+## week05-07 @Transactional
+###### 트랜젝션 적용해보기

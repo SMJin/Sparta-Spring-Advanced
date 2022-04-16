@@ -12,6 +12,7 @@ import sparta.spring.springadvanced.model.User;
 import sparta.spring.springadvanced.repository.FolderRepository;
 import sparta.spring.springadvanced.repository.ProductRepository;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +32,7 @@ public class FolderService {
     }
 
     // 로그인한 회원에 폴더들 등록
+    @Transactional
     public List<Folder> addFolders(List<String> folderNames, User user) {
         // 1) 입력으로 들어온 폴더 이름을 기준으로, 회원이 이미 생성한 폴더들을 조회합니다.
         List<Folder> existFolderList = folderRepository.findAllByUserAndNameIn(user, folderNames);
@@ -39,8 +41,6 @@ public class FolderService {
         for (String folderName : folderNames) {
             // 2) 이미 생성한 폴더가 아닌 경우만 폴더 생성
             if (isExistFolderName(folderName, existFolderList)) {
-                folderRepository.deleteAll(savedFolderList);
-
                 // Exception 발생!
                 throw new IllegalArgumentException("중복된 폴더명을 제거해 주세요! 폴더명: " + folderName);
             } else {
