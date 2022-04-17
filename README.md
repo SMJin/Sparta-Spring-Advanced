@@ -123,5 +123,8 @@
 ## week05-10 @Transactional Quiz
 ###### 트랜젝션이 하나씩만 처리되던 것을 전체 코드로 바꾸어주기
 
-## week05-12 Spring try catch error handling
+## week05-12 (1) Spring try catch error handling
 ###### try catch 구문을 이용해서 에러 처리하기
+
+## week05-12 (2) @ExceptionHandler
+###### @ExceptionHandler 를 이용하여 예외 처리하기

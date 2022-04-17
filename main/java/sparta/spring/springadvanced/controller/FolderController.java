@@ -26,26 +26,14 @@ public class FolderController {
     }
 
     @PostMapping("api/folders")
-    public ResponseEntity addFolders(
+    public List<Folder> addFolders(
             @RequestBody FolderRequestDto folderRequestDto,
             @AuthenticationPrincipal UserDetailsImpl userDetails
     ) {
-        try {
-            List<String> folderNames = folderRequestDto.getFolderNames();
-            User user = userDetails.getUser();
+        List<String> folderNames = folderRequestDto.getFolderNames();
+        User user = userDetails.getUser();
 
-            List<Folder> folders = folderService.addFolders(folderNames, user);
-            return new ResponseEntity(folders, HttpStatus.OK);
-        } catch(IllegalArgumentException ex) {
-            RestApiException restApiException = new RestApiException();
-            restApiException.setHttpStatus(HttpStatus.BAD_REQUEST);
-            restApiException.setErrorMessage(ex.getMessage());
-            return new ResponseEntity(
-// HTTP body
-                    restApiException,
-// HTTP status code
-                    HttpStatus.BAD_REQUEST);
-        }
+        return folderService.addFolders(folderNames, user);
     }
 
     // 회원이 등록한 모든 폴더 조회
@@ -74,6 +62,19 @@ public class FolderController {
                 sortBy,
                 isAsc,
                 userDetails.getUser()
+        );
+    }
+
+    @ExceptionHandler({ IllegalArgumentException.class })
+    public ResponseEntity handleException(IllegalArgumentException ex) {
+        RestApiException restApiException = new RestApiException();
+        restApiException.setHttpStatus(HttpStatus.BAD_REQUEST);
+        restApiException.setErrorMessage(ex.getMessage());
+        return new ResponseEntity(
+// HTTP body
+                restApiException,
+// HTTP status code
+                HttpStatus.BAD_REQUEST
         );
     }
 }
