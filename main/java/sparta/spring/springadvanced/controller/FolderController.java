@@ -2,9 +2,12 @@ package sparta.spring.springadvanced.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import sparta.spring.springadvanced.dto.FolderRequestDto;
+import sparta.spring.springadvanced.exception.RestApiException;
 import sparta.spring.springadvanced.model.Folder;
 import sparta.spring.springadvanced.model.Product;
 import sparta.spring.springadvanced.model.User;
@@ -23,14 +26,26 @@ public class FolderController {
     }
 
     @PostMapping("api/folders")
-    public List<Folder> addFolders(
+    public ResponseEntity addFolders(
             @RequestBody FolderRequestDto folderRequestDto,
             @AuthenticationPrincipal UserDetailsImpl userDetails
     ) {
-        List<String> folderNames = folderRequestDto.getFolderNames();
-        User user = userDetails.getUser();
+        try {
+            List<String> folderNames = folderRequestDto.getFolderNames();
+            User user = userDetails.getUser();
 
-        return folderService.addFolders(folderNames, user);
+            List<Folder> folders = folderService.addFolders(folderNames, user);
+            return new ResponseEntity(folders, HttpStatus.OK);
+        } catch(IllegalArgumentException ex) {
+            RestApiException restApiException = new RestApiException();
+            restApiException.setHttpStatus(HttpStatus.BAD_REQUEST);
+            restApiException.setErrorMessage(ex.getMessage());
+            return new ResponseEntity(
+// HTTP body
+                    restApiException,
+// HTTP status code
+                    HttpStatus.BAD_REQUEST);
+        }
     }
 
     // 회원이 등록한 모든 폴더 조회
