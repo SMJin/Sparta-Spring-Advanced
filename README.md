@@ -128,3 +128,6 @@
 
 ## week05-12 (2) @ExceptionHandler
 ###### @ExceptionHandler 를 이용하여 예외 처리하기
+
+## week05-13 Spring Global Error Handling
+###### 스프링 전체적용 예외 처리
