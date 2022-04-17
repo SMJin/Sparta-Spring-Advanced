@@ -119,3 +119,6 @@
 
 ## week05-07 @Transactional
 ###### 트랜젝션 적용해보기
+
+## week05-10 @Transactional Quiz
+###### 트랜젝션이 하나씩만 처리되던 것을 전체 코드로 바꾸어주기
